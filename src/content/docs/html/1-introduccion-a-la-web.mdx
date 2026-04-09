@@ -1,0 +1,50 @@
+---
+id: introduccion-web
+slug: introduccion/introduccion-web
+title: Introducción a la Web
+description: Introducción conceptual a la web, sus tecnologías principales, y cómo funciona.
+sidebar:
+  order: 1
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+import { FileTree } from '@astrojs/starlight/components';
+
+## ¿Como funciona la web?
+
+La web es es una de las tecnologías de nuestra era, y es la base de nuestra forma de interactuar con la información, el entretenimiento, y entre nosotros. La web es una red de documentos interconectados, que se acceden a través de navegadores web.
+
+Para poder crear contenido para la web, necesitamos entender cómo funciona. La web se basa en tres tecnologías principales: HTML, CSS, y JavaScript.
+
+<CardGrid>
+  <Card title="HTML" icon="seti:html">
+    Es el lenguaje de marcado que se utiliza para estructurar el contenido de una página web. HTML es el esqueleto de la web, y define la estructura y el contenido de una página.
+  </Card>
+  <Card title="CSS" icon="seti:css">
+    CSS es el lenguaje de estilos que se utiliza para dar estilo a una página web. CSS es el maquillaje de la web, y define cómo se ve una página.
+  </Card>
+  <Card title="JavaScript" icon="seti:javascript">
+    JavaScript es el lenguaje de programación que aporta la interactividad a una página web. JavaScript es la clave para que la web sea dinámica, y permite que las páginas web respondan a las acciones del usuario.
+  </Card>
+  <Card title="Servidor" icon="vercel">
+    El servidor es el componente que aloja y gestiona los recursos de una página web. Es el encargado de procesar las solicitudes de los usuarios y enviarles la información correspondiente.
+  </Card>
+</CardGrid>
+
+## ¿Cómo se accede a la web?
+Para acceder a la web, necesitamos un navegador web. Un navegador web es una aplicación que nos permite visualizar y navegar por las páginas web. Algunos ejemplos de navegadores web son Google Chrome, Mozilla Firefox, Microsoft Edge, y Safari.
+
+## ¿Cómo se crean las páginas web?
+Muchas vecces cuando pensamos en la web, se piensa que es algo que solo los ingeniero e ingenieras pueden crear, pero la realidad es que la web es una plataforma abierta y que puede ser utilizada por cualquier persona para crear contenido, contando con una curva de aprendizaje baja, pudiendo obtener resultados rapidamente. Para crear una página web, necesitamos escribir código HTML, CSS, y JavaScript, aunque en esta unidad nos vamos a enfocar en HTML, el lenguaje de marcado que se utiliza para estructurar el contenido de una página web. HTML es el esqueleto de la web, y define la estructura y el contenido de una página. Lo bueno de HTML es que no es un lenguaje de programación, sino un lenguaje de marcado basado en etiquetas, lo que lo hace fácil de aprender, leer y utilizar, mas adelante profundizaremos en CSS y si queremos JavaScript, pero por ahora nos vamos a enfocar en HTML.
+
+Un ejemplo de una estructura basica de como se veria un proyecto web con HTML, CSS y JavaScript seria el siguiente:
+
+<FileTree>
+- Mi-proyecto-web - Carpeta raíz de nuestro proyecto web
+  - index.html - El esqueleto de nuestra página web
+  - contacto.html - Otra página de nuestro proyecto web
+  - styles.css - El archivo de estilos de nuestra página web
+  - script.js - El archivo de JavaScript de nuestra página web
+</FileTree>
+
+Este es un ejemplo basico, la web es una plataforma muy flexible y puede ser utilizada de muchas formas diferentes, pero esta estructura es un buen punto de partida para entender cómo funciona la web y cómo se crean las páginas web.
