@@ -1,5 +1,6 @@
 import { definePlugin } from '@expressive-code/core';
 import { h } from '@expressive-code/core/hast';
+import { fromHtml } from 'hast-util-from-html'; 
 
 export function pluginLivePreview() {
   return definePlugin({
@@ -18,7 +19,6 @@ export function pluginLivePreview() {
         background: white; 
         color: black;
       }
-
       .live-preview-wrapper > figure.expressive-code {
         margin: 0 !important;
       }
@@ -28,12 +28,11 @@ export function pluginLivePreview() {
         if (!context.codeBlock.meta.includes('preview')) return;
 
         const code = context.codeBlock.getLines().map(l => l.text).join('\n');
-
         const originalBlockAst = context.renderData.blockAst;
 
-        const previewContainer = h('div.live-preview-container', [
-          { type: 'raw', value: code }
-        ]);
+        const htmlAst = fromHtml(code, { fragment: true }).children;
+
+        const previewContainer = h('div.live-preview-container', htmlAst);
 
         context.renderData.blockAst = h('div.live-preview-wrapper.not-content', [
           previewContainer,
