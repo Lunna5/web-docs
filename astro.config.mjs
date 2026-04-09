@@ -5,7 +5,7 @@ import { pluginLivePreview } from './src/plugin/playground';
 
 // https://astro.build/config
 export default defineConfig({
-	site: "tic.lunna.dev",
+	site: "https://tic.lunna.dev",
 	integrations: [
 		starlight({
 			title: 'TIC',
