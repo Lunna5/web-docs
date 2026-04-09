@@ -14,9 +14,16 @@ importers:
       astro:
         specifier: ^6.0.1
         version: 6.1.5(@types/node@24.12.2)(rollup@4.60.1)
+      astro-live-code:
+        specifier: ^0.0.6
+        version: 0.0.6
       sharp:
         specifier: ^0.34.2
         version: 0.34.5
+    devDependencies:
+      '@expressive-code/core':
+        specifier: ^0.41.7
+        version: 0.41.7
 
 packages:
 
@@ -730,6 +737,9 @@ packages:
     resolution: {integrity: sha512-hUpogGc6DdAd+I7pPXsctyYPRBJDK7Q7d06s4cyP0Vz3OcbziP3FNzN0jZci1BpCvLn9675DvS7B9ctKKX64JQ==}
     peerDependencies:
       astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0 || ^6.0.0-beta
+
+  astro-live-code@0.0.6:
+    resolution: {integrity: sha512-s8rnHk7ADXBKikCJuHmSclRs5EcYoMUofHo8vcbPRieEFD/26JQReVIARBh+IBppwrrhc1gv2tP5ly3x7LQ5sQ==}
 
   astro@6.1.5:
     resolution: {integrity: sha512-AJVw/JlssxUCBFi3Hp4djL8Pt7wUQqStBBawCd8cNGBBM2lBzp/rXGguzt4OcMfW+86fs0hpFwMyopHM2r6d3g==}
@@ -2408,6 +2418,12 @@ snapshots:
     dependencies:
       astro: 6.1.5(@types/node@24.12.2)(rollup@4.60.1)
       rehype-expressive-code: 0.41.7
+
+  astro-live-code@0.0.6:
+    dependencies:
+      estree-util-visit: 2.0.0
+      magic-string: 0.30.21
+      unist-util-visit-parents: 6.0.2
 
   astro@6.1.5(@types/node@24.12.2)(rollup@4.60.1):
     dependencies:
