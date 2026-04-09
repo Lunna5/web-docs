@@ -40,6 +40,10 @@ export default defineConfig({
           autogenerate: { directory: "html" },
         },
       ],
+			components: {
+				ThemeProvider: './src/components/override/ForceLight.astro',
+				ThemeSelect: './src/components/override/EmptyComponent.astro'
+			},
       plugins: [
         starlightCatppuccin({
           dark: { flavor: "mocha"},
