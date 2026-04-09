@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import { pluginLivePreview } from "./src/plugin/playground";
 import starlightCatppuccin from "@catppuccin/starlight";
+import starlightImageZoom from 'starlight-image-zoom'
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,6 +32,10 @@ export default defineConfig({
       },
       sidebar: [
         {
+          label: "Introducción",
+          autogenerate: { directory: "introduccion" },
+        },
+				{
           label: "Tema 1: HTML",
           autogenerate: { directory: "html" },
         },
@@ -40,8 +45,8 @@ export default defineConfig({
           dark: { flavor: "mocha"},
           light: { flavor: "latte" },
         }),
+				starlightImageZoom(),
       ],
-			
     }),
   ],
 });
