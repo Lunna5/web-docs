@@ -1,0 +1,75 @@
+---
+id: elementos-de-texto-y-titulos
+slug: html/elementos-de-texto-y-titulos
+title: Etiquetas de elementos en línea
+description: Descubre cómo dar jerarquía a tu contenido con los títulos y cómo dar formato al texto con elementos en línea.
+sidebar:
+  order: 3
+  badge:
+    text: Práctica 2
+    type: tip
+---
+
+import { FileTree } from "@astrojs/starlight/components";
+
+En la lección anterior vimos cómo crear la estructura básica de nuestra página y añadimos nuestro primer título con la etiqueta `<h1>`. Sin embargo, el texto plano no es suficiente para crear una página web estructurada y fácil de leer. 
+
+En esta sección vamos a profundizar en cómo organizar la jerarquía de la información utilizando diferentes niveles de títulos y cómo dar formato específico a partes de nuestro texto utilizando los "elementos en línea".
+
+## Jerarquía visual: Los Títulos (`<h1>` a `<h6>`)
+
+En HTML, disponemos de seis niveles de etiquetas para definir títulos (también conocidos como encabezados o *headings* en inglés). Van desde el `<h1>` hasta el `<h6>`.
+
+* `<h1>`: Es el título principal de la página. Por regla general, **solo debe haber un `<h1>` por página** y debe describir de qué trata el documento en general.
+* `<h2>` al `<h6>`: Representan subtítulos. Se utilizan para dividir el contenido en secciones más pequeñas. Un `<h2>` es un subtítulo del `<h1>`, un `<h3>` es un subtítulo de un `<h2>`, y así sucesivamente.
+
+Esta jerarquía no solo hace que la página se vea ordenada, sino que es vital para que los motores de búsqueda (como Google) y los lectores de pantalla (para accesibilidad) entiendan la estructura de tu contenido.
+
+```html preview
+<html>
+  <body>
+    <h1>Este es el Título Principal (h1)</h1>
+    <h2>Este es un Subtítulo (h2)</h2>
+    <h3>Este es un título de sección (h3)</h3>
+    <h4>Título de nivel 4 (h4)</h4>
+    <h5>Título de nivel 5 (h5)</h5>
+    <h6>Título de nivel 6 (h6)</h6>
+  </body>
+</html>
+```
+
+## Elementos en línea
+
+Hasta ahora hemos usado *etiquetas de bloque* como `<h1>` y `<p>`, las cuales ocupan todo el ancho disponible y crean una nueva línea después de ellas.
+Html también tiene *elementos en línea* (inline elements), que se utilizan para dar formato a partes específicas del texto sin romper la estructura del bloque.
+
+#### Etiquetas de presentación vs. semánticas
+Al formatear texto, es importante distinguir entre cómo se ve (presentación) y qué significa (semántica):
+- **Negrita / Importancia**: tanto `<b>` como `<strong>` hacen que el texto se vea en negrita, pero `<strong>` también indica que el texto es importante desde un punto de vista semántico.
+- **Cursiva / Énfasis**: tanto `<i>` como `<em>` hacen que el texto se vea en cursiva, pero `<em>` indica que el texto tiene un énfasis especial.
+
+:::tip[Buenas prácticas]
+Hoy en día se recomienda usar `<strong>` y `<em>` en lugar de `<b>` e `<i>` siempre que el texto realmente tenga una mayor importancia en el contexto de tu frase, ya que mejora la accesibilidad de tu página web.
+:::
+
+Vamos a observar un ejemplo con algunos de los elementos en línea más comunes:
+
+```html preview
+<html>
+  <body>
+    <p>
+      Este es un párrafo normal donde podemos usar <strong>texto muy importante</strong> o hacer un <em>énfasis especial</em>. <br />
+      También podemos marcar algo como <s>incorrecto</s> o <mark>resaltarlo para que llame la atención</mark>. <br />
+      Incluso podemos escribir fórmulas matemáticas simples como E = mc<sup>2</sup>.
+    </p>
+  </body>
+</html>
+```
+
+## Práctica 2: Estructurando y formateando texto
+
+Ahora es vuestro turno de practicar. Al igual que hicimos en la sección anterior, vamos a crear una nueva carpeta en nuestra carpeta de HTML llamada `practica-2`, y dentro de esta carpeta vamos a crear un nuevo archivo llamado `index.html`. En este archivo vamos a escribir un documento HTML que siga las siguientes pautas:
+1. Crea la estructura básica del documento HTML (`<html>`, `<head>`, `<title>`, y `<body>`).
+2. Añade un titulo principal utilizando `<h1>` con el nombre de un tema que te guste (puedes sacar el contenido de la wikipedia, por ejemplo).
+3. Añade al menos 3 subtitulos utilizando `<h2>` y `<h3>` para organizar la información.
+4. Dentro de los párrafos, busca partes del texto que puedas resaltar utilizando `<strong>`, `<em>`, `<mark>`, o cualquier otro elemento en línea que consideres apropiado.
