@@ -1,0 +1,144 @@
+---
+id: listas-ordenadas-y-desordenas
+slug: html/listas-ordenadas-y-desordenadas
+title: Listas ordenadas y desordenadas
+description: Descubre cómo organizar tu contenido con listas ordenadas y desordenadas en HTML.
+sidebar:
+  order: 3
+  badge:
+    text: Práctica 3
+    type: tip
+---
+
+import { FileTree } from "@astrojs/starlight/components";
+
+En la práctica anterior aprendiste a estructurar texto con títulos, subtítulos y elementos en línea.
+Ahora vamos a dar un paso más: organizar información en forma de listas, algo super común en páginas web (recetas, menús, pasos, glosarios, etc.).
+
+## ¿Qué tipos de listas existen en HTML?
+
+HTML tiene tres tipos principales de listas:
+
+- Lista desordenada con `<ul>` (*unordered list*).
+- Lista ordenada con `<ol>` (*ordered list*).
+- Lista de definiciones con `<dl>` (*description list*).
+
+En los dos primeros casos, cada elemento se escribe con `<li>` (*list item*).
+
+### Listas desordenadas (`<ul>`)
+
+Se usan cuando el orden de los elementos no importa.
+El navegador las muestra normalmente con viñetas.
+
+```html preview
+<html>
+  <body>
+    <h2>Materiales para dibujo</h2>
+    <ul>
+      <li>Escuadra</li>
+      <li>Cartabón</li>
+      <li>Compás</li>
+      <li>Portaminas</li>
+    </ul>
+  </body>
+</html>
+```
+
+### Listas ordenadas (`<ol>`)
+
+Se usan cuando el orden sí importa, por ejemplo en instrucciones o pasos.
+El navegador las muestra con números por defecto.
+
+```html preview
+<html>
+  <body>
+    <h2>Pasos para guardar un archivo</h2>
+    <ol>
+      <li>Abre el menú file</li>
+      <li>Haz clic en "Save As..."</li>
+      <li>Elige la carpeta de destino</li>
+      <li>Pulsa en Guardar</li>
+    </ol>
+  </body>
+</html>
+```
+
+### Listas de definiciones (`<dl>`, `<dt>`, `<dd>`)
+
+Este tipo de lista es ideal para mostrar términos y su descripción:
+
+- `<dl>`: contenedor de la lista de definiciones.
+- `<dt>`: término.
+- `<dd>`: definición del término.
+
+```html preview
+<html>
+  <body>
+    <h2>Mini glosario web</h2>
+    <dl>
+      <dt>HTML</dt>
+      <dd>Lenguaje de marcado para estructurar páginas web.</dd>
+
+      <dt>Etiqueta</dt>
+      <dd>Elemento de HTML que define una parte del contenido.</dd>
+    </dl>
+  </body>
+</html>
+```
+
+:::tip[Buena práctica]
+Usa cada lista según su intención.
+Si estás describiendo pasos, usa `<ol>`.
+Si solo enumeras elementos sin orden, usa `<ul>`.
+Si defines conceptos, usa `<dl>`.
+:::
+
+## ¿Se pueden anidar listas?
+
+Sí, puedes meter una lista dentro de otra.
+Esto se usa para crear subcategorías.
+
+```html preview
+<html>
+  <body>
+    <h2>Temario</h2>
+    <ul>
+      <li>
+        HTML
+        <ul>
+          <li>Etiquetas básicas</li>
+          <li>Listas</li>
+        </ul>
+      </li>
+      <li>CSS</li>
+    </ul>
+  </body>
+</html>
+```
+
+## Práctica 3: Crea una receta con listas
+
+Vamos a continuar la práctica anterior (practica-2) creando una nueva entrega.
+Dentro de practicas, crea una carpeta llamada practica-3, y dentro un archivo index.html.
+
+<FileTree>
+- practicas - Carpeta raíz de prácticas
+  - practica-3 - Carpeta de la práctica 3
+    - index.html - Archivo donde harás la actividad
+</FileTree>
+
+En este archivo, crea una página HTML de una receta de cocina (la que tú quieras) siguiendo estas pautas:
+
+1. Escribe la estructura base del documento (html, head, title y body).
+2. Añade un h1 con el nombre de la receta.
+3. Crea como mínimo 3 listas en total.
+4. Asegúrate de incluir mínimo una de cada tipo:
+   - una lista desordenada (ul) para los ingredientes,
+   - una lista ordenada (ol) para los pasos de preparación,
+   - y una lista de definiciones (dl con dt y dd) para explicar al menos 2 términos de cocina.
+5. Añade al menos un h2 para separar secciones (por ejemplo: Ingredientes, Preparación y Glosario).
+6. Anida una lista dentro de otra, por ejemplo separando ingredientes principales y opcionales.
+
+:::caution[Requisito importante]
+Si no incluyes los 3 tipos de lista (ul, ol y dl), la práctica no se considera completa.
+:::
