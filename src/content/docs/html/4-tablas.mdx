@@ -1,0 +1,165 @@
+---
+id: tablas-en-html
+slug: html/tablas-en-html
+title: Tablas en HTML
+description: Aprende a organizar datos en filas y columnas con tablas en HTML.
+sidebar:
+  order: 4
+  badge:
+    text: Práctica 4
+    type: tip
+---
+
+import { FileTree } from "@astrojs/starlight/components";
+
+En las prácticas anteriores trabajaste con títulos, párrafos, elementos en línea y listas.
+Ahora vamos a aprender a mostrar información en formato de filas y columnas usando tablas.
+
+## ¿Qué es una tabla en HTML?
+
+Una tabla es una estructura que permite organizar datos de forma clara en celdas.
+Se usa cuando quieres comparar información, mostrar horarios, listados de productos, calificaciones, etc.
+
+La etiqueta principal es `<table>`, y dentro de ella se suelen usar estas etiquetas:
+
+- `<tr>`: define una fila.
+- `<th>`: define una celda de encabezado.
+- `<td>`: define una celda de datos.
+
+## Estructura básica de una tabla
+
+```html preview
+<html>
+	<body>
+		<h2>Horario de estudio</h2>
+
+		<table border="1">
+			<tr>
+				<th>Día</th>
+				<th>Actividad</th>
+			</tr>
+			<tr>
+				<td>Lunes</td>
+				<td>Estudiar Historia</td>
+			</tr>
+			<tr>
+				<td>Martes</td>
+				<td>Estudiar Matemáticas</td>
+			</tr>
+		</table>
+	</body>
+</html>
+```
+
+En este ejemplo:
+
+- La primera fila contiene encabezados con `<th>`.
+- Las filas siguientes contienen datos con `<td>`.
+
+## Mejor organización: `caption`, `thead`, `tbody` y `tfoot`
+
+Cuando una tabla crece, conviene organizarla por partes:
+
+- `<caption>`: título de la tabla.
+- `<thead>`: encabezado.
+- `<tbody>`: cuerpo principal.
+- `<tfoot>`: pie de tabla (resumen o totales).
+
+```html preview
+<html>
+	<body>
+		<table border="1">
+			<caption>Gasto semanal</caption>
+
+			<thead>
+				<tr>
+					<th>Categoría</th>
+					<th>Importe</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>Comida</td>
+					<td>35 EUR</td>
+				</tr>
+				<tr>
+					<td>Transporte</td>
+					<td>15 EUR</td>
+				</tr>
+			</tbody>
+
+			<tfoot>
+				<tr>
+					<td><strong>Total</strong></td>
+					<td><strong>50 EUR</strong></td>
+				</tr>
+			</tfoot>
+		</table>
+	</body>
+</html>
+```
+
+## Combinar celdas: `colspan` y `rowspan`
+
+También puedes unir celdas para representar mejor algunos datos:
+
+- `colspan`: una celda ocupa varias columnas.
+- `rowspan`: una celda ocupa varias filas.
+
+```html preview
+<html>
+	<body>
+		<table border="1">
+			<tr>
+				<th>Curso</th>
+				<th colspan="2">Horario</th>
+			</tr>
+			<tr>
+				<td rowspan="2">HTML básico</td>
+				<td>Lunes</td>
+				<td>16:00</td>
+			</tr>
+			<tr>
+				<td>Miércoles</td>
+				<td>16:00</td>
+			</tr>
+		</table>
+	</body>
+</html>
+```
+
+:::tip[Buena práctica]
+Usa tablas para datos tabulares, no para maquetar toda la página.
+Para el diseño general del sitio se usan CSS y sistemas de layout como Flexbox o Grid.
+:::
+
+## Práctica 4: Crea una tabla informativa
+
+Vamos a continuar la secuencia de prácticas con una nueva entrega.
+Crea una carpeta llamada practica-4 dentro de practicas, y dentro crea un archivo index.html.
+
+<FileTree>
+- practicas - Carpeta raíz de prácticas
+	- practica-4 - Carpeta de la práctica 4
+		- index.html - Archivo donde harás la actividad
+</FileTree>
+
+En este archivo, crea una página HTML de una tabla informativa (tema libre) con estas condiciones:
+
+1. Escribe la estructura base del documento (html, head, title y body).
+2. Añade un h1 con el título de la página.
+3. Crea una tabla con al menos 4 filas de datos (sin contar el encabezado).
+4. La tabla debe incluir:
+	 - al menos 2 encabezados con th,
+	 - celdas de datos con td,
+	 - y un caption que describa la tabla.
+5. Organiza la tabla usando thead y tbody.
+6. Recupera elementos en línea de prácticas anteriores dentro de alguna celda:
+	 - usa como mínimo un strong,
+	 - y añade también un em o un mark.
+7. Opcional (reto): usa colspan o rowspan en alguna parte de la tabla.
+
+:::caution[Requisito importante]
+Si tu tabla no tiene encabezados (th), cuerpo (tbody) y al menos un strong dentro de una celda, la práctica no se considera completa.
+:::
