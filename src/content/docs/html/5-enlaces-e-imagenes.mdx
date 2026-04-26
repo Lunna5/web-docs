@@ -1,0 +1,193 @@
+---
+id: enlaces-e-imagenes
+slug: html/enlaces-e-imagenes
+title: Enlaces e imágenes en HTML
+description: Aprende a enlazar páginas y mostrar imágenes con las etiquetas a e img.
+sidebar:
+  order: 5
+  badge:
+    text: Práctica 5
+    type: tip
+---
+
+import { FileTree, Tabs, TabItem, LinkCard } from "@astrojs/starlight/components";
+import PageFrame from "../../../components/PageFrame.astro";
+
+En las prácticas anteriores aprendiste a estructurar texto, crear listas y organizar datos con tablas.
+Ahora vamos a dar un paso más: conectar páginas entre sí y mostrar contenido visual con imágenes.
+
+## Enlaces con la etiqueta `<a>`
+
+La etiqueta `<a>` (*anchor*) se usa para crear enlaces.
+Un enlace permite que el usuario navegue a otra página, otro archivo o incluso a una sección dentro del mismo documento.
+
+### Propiedades importantes de `<a>`
+
+- `href`: indica la dirección a la que apunta el enlace.
+- `target`: indica dónde se abrirá ese enlace.
+
+Valores comunes de `target`:
+
+- `_self`: abre el enlace en la misma pestaña (comportamiento por defecto).
+- `_blank`: abre el enlace en una pestaña nueva.
+
+### Paginas externas
+Uno de los usos más comunes de `<a>` es enlazar a otras páginas web como Wikipedia, redes sociales, documentación, etc.
+
+```html preview
+<html>
+	<body>
+		<h2>Ejemplos de enlaces externos</h2>
+
+		<p>
+			<a href="https://developer.mozilla.org/es/docs/Web/HTML">Ir a la documentación de HTML</a>
+		</p>
+
+		<p>
+			<a href="https://www.wikipedia.org" target="_blank">Abrir Wikipedia en una pestaña nueva</a>
+		</p>
+	</body>
+</html>
+```
+
+### Enlaces de sección dentro de la misma página
+También puedes usar `<a>` para crear enlaces dentro de la misma página, apuntando a secciones específicas usando el atributo `id`.
+#### Ejemplo de anclas internos
+<PageFrame src="/ejemplos/5/secciones/index.html" height="600px"/>
+
+```html
+<html>
+  <body>
+    <h2 id="seccion1">Sección 1</h2>
+    <p>Contenido de la sección 1...</p>
+
+    <h2 id="seccion2">Sección 2</h2>
+    <p>Contenido de la sección 2...</p>
+
+    <p>
+      <a href="#seccion1">Ir a Sección 1</a>
+      |
+      <a href="#seccion2">Ir a Sección 2</a>
+    </p>
+  </body>
+</html>
+```
+<LinkCard
+  title="Previsualizar el ejemplo de enlaces internos en una pestaña nueva"
+  href="/ejemplos/5/secciones/index.html"
+  target="_blank"
+/>
+
+### Enlaces de otra página dentro de tu proyecto
+Si tienes varias páginas dentro de tu proyecto, puedes enlazarlas usando rutas relativas, supongamos que tienes esta estructura:
+
+<PageFrame src="/ejemplos/5/multiples-paginas/index.html" />
+
+<FileTree>
+- raiz - Carpeta raíz del proyecto
+  - index.html - Página principal
+  - about.html - Página "Acerca de"
+</FileTree>
+
+<Tabs>
+    <TabItem label="index.html">
+        ```html
+        <html>
+          <body>
+            <h1>Página principal</h1>
+            <p>Bienvenido a mi sitio web.</p>
+            <p>
+              <a href="about.html">Ir a la página "Acerca de"</a>
+            </p>
+          </body>
+        </html>
+        ```
+    </TabItem>
+    <TabItem label="about.html">
+        ```html
+        <html>
+          <body>
+            <h1>Acerca de</h1>
+            <p>Esta es la página de "Acerca de".</p>
+            <p>
+              <a href="index.html">Volver a la página principal</a>
+            </p>
+          </body>
+        </html>
+        ```
+    </TabItem>
+</Tabs>
+
+<LinkCard
+  title="Previsualizar el ejemplo de múltiples páginas"
+  href="/ejemplos/5/multiples-paginas/index.html"
+  target="_blank"
+/>
+
+:::tip[Buena práctica]
+Cuando uses `target="_blank"`, es recomendable añadir también `rel="noopener noreferrer"` por seguridad.
+:::
+
+
+## Imágenes con la etiqueta `<img>`
+
+La etiqueta `<img>` se usa para mostrar imágenes en una página.
+Es una etiqueta sin cierre (autocontenida), y necesita ciertas propiedades para funcionar correctamente.
+
+### Propiedades importantes de `<img>`
+
+- `src`: ruta o URL de la imagen.
+- `alt`: texto alternativo que describe la imagen. Es muy importante para accesibilidad.
+- `width`: ancho de la imagen.
+- `height`: alto de la imagen.
+
+```html preview iframe
+<html>
+	<body>
+		<h2>Imagen de ejemplo</h2>
+
+		<img
+			src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg"
+			alt="Logo de Firefox en color naranja y morado"
+			width="140"
+			height="140"
+		/>
+	</body>
+</html>
+```
+
+:::caution[Importante]
+No dejes el atributo `alt` vacío salvo que la imagen sea puramente decorativa.
+En la mayoría de casos, el `alt` ayuda a que personas con discapacidad visual entiendan el contenido de la imagen a través de lectores de pantalla y 
+también mejora el SEO de tu página.
+:::
+
+## Práctica 5: Crea una mini galería con enlaces
+
+Vamos a continuar la secuencia de prácticas.
+Dentro de la carpeta practicas, crea una carpeta llamada practica-5 y dentro un archivo index.html.
+
+<FileTree>
+- practicas - Carpeta raíz de prácticas
+	- practica-5 - Carpeta de la práctica 5
+		- index.html - Archivo donde harás la actividad
+</FileTree>
+
+En este archivo, crea una página HTML que cumpla estas condiciones:
+
+1. Escribe la estructura base del documento (`<html>`, `<head>`, `<title>`, `<body>`).
+2. Añade un `<h1>` con el título de tu mini galería (por ejemplo: "Navegadores web").
+3. Crea al menos 2 enlaces con `<a>`:
+	 - uno que abra en la misma pestaña,
+	 - y otro que abra en pestaña nueva usando `target="_blank"`.
+4. En al menos uno de esos enlaces, mete dentro elementos en línea como `<strong>`, `<em>` o `<mark>`.
+5. Añade al menos 2 imágenes con `<img>` usando obligatoriamente:
+	 - `src`,
+	 - `alt`,
+	 - `width`,
+	 - `height`.
+6. Haz que al menos una imagen sea clicable metiéndola dentro de un enlace `<a>`.
+7. Agrega una tabla con al menos 2 filas y 2 columnas, y dentro de alguna celda incluye un enlace o una imagen.
+:::caution[Requisito importante]
+Si no usas correctamente `href`, `target` y los atributos `src`, `alt`, `width`, `height`, la práctica no se considera completa.
+:::

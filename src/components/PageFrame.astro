@@ -1,0 +1,13 @@
+---
+const { src, height } = Astro.props;
+---
+
+<style>
+  .iframe-renderer {
+    border: 1px solid var(--sl-color-gray-5);
+    background-color: white;
+    margin: 1rem 0;
+  }
+</style>
+
+<iframe src={src} width="100%" height={height || "400"} class="iframe-renderer"></iframe>
