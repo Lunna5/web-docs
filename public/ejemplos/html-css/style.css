@@ -1,0 +1,16 @@
+.centrar-texto,
+.text-center, .centrar-imagen, .image-center {
+  text-align: center;
+}
+
+.resaltado-naranja,
+.orange-highlighted {
+  color: #e34c26;
+  font-weight: bold;
+}
+
+.resaltado-azul,
+.blue-highlighted {
+  color: blue;
+  font-weight: bold;
+}

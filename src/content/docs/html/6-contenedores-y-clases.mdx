@@ -1,0 +1,264 @@
+---
+id: contenedores-y-clases-en-html
+slug: html/contenedores-y-clases-en-html
+title: Contenedores, clases y semantica en HTML
+description: Aprende a organizar contenido con contenedores semánticos y genéricos como div, header, footer y span y a usar la propiedad class para aplicar estilos.
+sidebar:
+  order: 6
+  badge:
+    text: Práctica 6
+    type: tip
+---
+
+import { FileTree, Tabs, TabItem, LinkCard } from "@astrojs/starlight/components";
+
+En las prácticas anteriores aprendiste a estructurar contenido con texto, listas, tablas, enlaces e imágenes.
+Ahora vamos a unir todo eso usando **contenedores**, que son las piezas que nos permiten organizar una página web con orden y semántica.
+
+## ¿Qué es un contenedor en HTML?
+
+Un contenedor es una etiqueta que agrupa contenido.
+Algunos contenedores solo sirven para ordenar visualmente, mientras que otros también le dicen al navegador qué representa esa parte de la página.
+
+La gran idea aquí es esta:
+
+- **Contenedor genérico**: agrupa contenido, pero no dice mucho sobre su significado.
+- **Contenedor semántico**: agrupa contenido y además describe su función.
+
+## Contenedores genéricos: `div` y `span`
+
+### `div`
+
+`div` es un contenedor de bloque.
+Se usa cuando necesitas agrupar elementos, pero no existe una etiqueta semántica más concreta para ese caso.
+
+```html preview
+<html>
+	<body>
+		<div>
+			<h2>Tarjeta de presentación</h2>
+			<p>Nombre: Lunna</p>
+			<p>Curso: HTML básico</p>
+		</div>
+	</body>
+</html>
+```
+
+### `span`
+
+`span` es un contenedor en línea.
+Se usa para envolver una parte pequeña de texto sin romper el flujo del párrafo.
+
+```html preview
+<html>
+	<body>
+		<p>
+			Hoy vamos a estudiar <span>contenedores HTML</span> y semántica.
+		</p>
+	</body>
+</html>
+```
+
+:::tip[Buena práctica]
+Usa `div` y `span` cuando no tengas una etiqueta semántica mejor.
+Si puedes describir mejor la función del contenido con otra etiqueta, entonces usa esa etiqueta.
+:::
+
+## El atributo `class`
+
+El atributo `class` sirve para asignar una o varias clases CSS a un elemento.
+Eso nos permite aplicar estilos concretos sin mezclar la estructura HTML con el diseño.
+
+Por ejemplo, si quieres centrar texto o resaltar una palabra dentro de un párrafo, puedes usar `class` junto con `span`.
+
+Por ahora voy a proporcionarte algunas clases que puedes usar en tu práctica que he creado para ti.
+
+- `centrar-texto` o `text-center` para centrar el texto dentro de un bloque.
+- `centrar-imagen` o `image-center` para centrar una imagen dentro de su contenedor.
+- `resaltado-naranja` o `orange-highlighted` para resaltar una palabra en naranja.
+- `resaltado-azul` o `blue-highlighted` para resaltar una palabra en azul.
+
+Estas clases están pensadas para aplicarse dentro de `span`, `div` o cualquier otro elemento cuando quieras destacar una parte del texto.
+
+```html preview
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/6/style.css">
+	</head>
+	<body>
+		<p class="centrar-texto">
+			Aprende HTML es <span class="orange-highlighted">muy útil</span> y
+			entender la semántica es <span class="resaltado-azul">fundamental</span>.
+		</p>
+	</body>
+</html>
+```
+
+## Contenedores semánticos
+
+HTML tiene varias etiquetas que expresan mejor la estructura de una página.
+
+- `header`: cabecera de una página o de una sección.
+- `nav`: zona de navegación.
+- `main`: contenido principal de la página.
+- `section`: sección temática.
+- `article`: contenido independiente o reutilizable.
+- `aside`: contenido complementario.
+- `footer`: pie de página o de una sección.
+
+### ¿Por qué son importantes?
+
+Porque ayudan a:
+
+- mejorar la accesibilidad,
+- facilitar la lectura del código,
+- hacer más claro el documento para buscadores y lectores de pantalla,
+- y construir una estructura más mantenible.
+
+## Estructura semántica de una página
+
+```html preview
+<html>
+	<body>
+		<header>
+			<h1>Mi blog de aprendizaje</h1>
+			<nav>
+				<a href="#articulos">Artículos</a>
+				<a href="#contacto">Contacto</a>
+			</nav>
+		</header>
+
+		<main>
+			<section id="articulos">
+				<h2>Últimos artículos</h2>
+
+				<article>
+					<h3>Cómo empezar con HTML</h3>
+					<p>HTML nos ayuda a estructurar el contenido de una web.</p>
+				</article>
+
+				<article>
+					<h3>La importancia de la semántica</h3>
+					<p>Elegir la etiqueta correcta mejora la comprensión del contenido.</p>
+				</article>
+			</section>
+
+			<aside>
+				<h2>Recurso recomendado</h2>
+				<p>Repasa las etiquetas semánticas antes de hacer tu práctica.</p>
+			</aside>
+		</main>
+
+		<footer id="contacto">
+			<p>Hecho con HTML y ganas de aprender.</p>
+		</footer>
+	</body>
+</html>
+```
+
+## `div` versus semántica
+
+No siempre está mal usar `div`.
+El problema aparece cuando usamos `div` para todo y perdemos el significado de la página.
+
+<Tabs>
+	<TabItem label="Con div">
+
+```html
+<div>
+	<div>
+		<h1>Mi sitio</h1>
+	</div>
+	<div>
+		<p>Contenido principal</p>
+	</div>
+	<div>
+		<p>Pie de página</p>
+	</div>
+</div>
+```
+
+	</TabItem>
+	<TabItem label="Con semántica">
+
+```html
+<header>
+	<h1>Mi sitio</h1>
+</header>
+<main>
+	<p>Contenido principal</p>
+</main>
+<footer>
+	<p>Pie de página</p>
+</footer>
+```
+
+	</TabItem>
+</Tabs>
+
+:::tip[Regla rápida]
+Si el contenido es una gran sección del documento, piensa en `header`, `main`, `section`, `article`, `aside` o `footer`.
+Si solo necesitas agrupar o destacar una parte pequeña, piensa en `div` o `span`.
+:::
+
+## Práctica 6: Organiza una página con contenedores
+
+Vamos a continuar la secuencia de prácticas con una nueva entrega.
+Dentro de la carpeta practicas, crea una carpeta llamada practica-6 y dentro un archivo index.html.
+
+<FileTree>
+- practicas - Carpeta raíz de prácticas
+	- practica-6 - Carpeta de la práctica 6
+		- index.html - Archivo donde harás la actividad
+</FileTree>
+
+Despues tendras que descargar el `style.css` que he preparado para esta práctica y colocarlo en la carpeta `practicas/practica-6`.
+<LinkCard
+	title="Descarga el archivo style.css para la práctica 6"
+	href="/assets/6/style.css"
+	download="style.css"
+	target="_blank"
+	description="Haz clic aquí para descargar el archivo CSS que usarás en esta práctica."
+/>
+
+Tendria que quedar algo asi:
+
+<FileTree>
+- practicas - Carpeta raíz de prácticas
+	- practica-6 - Carpeta de la práctica 6
+		- index.html - Archivo donde harás la actividad
+		- style.css - Archivo de estilos para la práctica que has descargado
+</FileTree>
+
+Después, en este archivo `index.html`, dentro del head de tu documento, enlaza el archivo CSS usando la etiqueta `link`:
+
+```diff lang="html"
+<head>
+	<title>Mi página con contenedores</title>
++	<link rel="stylesheet" href="style.css">
+</head>
+```
+
+En este archivo, crea una página HTML sobre un tema libre que cumpla estas condiciones:
+
+1. Escribe la estructura base del documento (`<html>`, `<head>`, `<title>`, `<body>`).
+2. Usa al menos un `<header>` con un `<h1>`.
+3. Usa un `<main>` que contenga al menos dos `<section>` o `<article>`.
+4. Añade un `<aside>` con contenido complementario.
+5. Cierra la página con un `<footer>`.
+6. Usa al menos un `<div>` para agrupar contenido visualmente.
+7. Usa al menos un `<span>` con su clase dentro de un párrafo para destacar una palabra o frase.
+8. Añade al menos un enlace y una imagen que se encuentre centrada dentro del contenido para conectar lo aprendido con prácticas anteriores.
+
+:::caution[Requisito importante]
+Si solo usas `div` para toda la página, la práctica no se considera completa.
+Debes mostrar al menos tres contenedores semánticos distintos además de `div` y `span`.
+:::
+
+## Evita estos errores
+
+- Usar `<div>` para todo sin pensar si existe una etiqueta semántica mejor.
+- Poner `<span>` para grandes bloques de contenido; `span` es solo para fragmentos pequeños.
+- Olvidar cerrar contenedores y romper la jerarquía del documento.
+- Meter contenido principal dentro de `aside` o usar `footer` como si fuera cualquier sección.
+- Crear una página sin `main`, `header` o `footer` cuando claramente forman parte de la estructura.
