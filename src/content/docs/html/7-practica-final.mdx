@@ -1,0 +1,66 @@
+---
+id: practica-final
+slug: html/practica-final
+title: Práctica Final
+description: Rellena el `index.html` del ejemplo del curriculum y añade un botón de descarga para obtener el ZIP con los recursos.
+sidebar:
+  order: 7
+  badge:
+    text: Práctica final
+    type: tip
+---
+
+import { LinkCard, FileTree } from "@astrojs/starlight/components";
+
+En esta práctica final vas a completar la plantilla del curriculum que está en la carpeta de ejemplos.
+
+La tarea consiste en lo siguiente:
+
+- Abre el archivo `index.html` y rellénalo con el contenido pedido en el enunciado.
+- Mantén las clases y la estructura semántica ya presentes (por ejemplo: la `sidebar`, `main`, `table`, el botón de menú y las clases `perfil`, `contact-container`, etc.).
+- Asegúrate de que la página incluya: un `header` con `h1`, una breve descripción personal (`section` con `h3` y `p`), una tabla para la formación con `thead` y `tbody` y al menos dos secciones adicionales para experiencia/proyectos/habilidades.
+- Añade contenido significativo en los spans y usa clases proporcionadas por los estilos para resaltar palabras cuando proceda.
+- No cambies el comportamiento del botón de menú (`index.js`) — solo añade contenido HTML y texto donde indica el ejercicio.
+
+Requisitos mínimos (comprueba que estén todos):
+
+1. `header` con `h1` y subtítulo.
+2. `main` que contenga al menos 4 `section` o `article`.
+3. Una `aside` para información complementaria (por ejemplo, datos de contacto o enlaces).
+4. Una tabla de formación con la clase `table`, `thead` y `tbody`.
+5. Uso de `div` y `span` para agrupar y resaltar texto.
+6. Una imagen y al menos un enlace externo.
+7. Cambiar las variables de color en `vars.css` para personalizar el diseño a tu gusto.
+8. El botón de menú debe seguir funcionando correctamente para mostrar/ocultar la barra lateral en dispositivos móviles.
+9. Añade los atributos correspondientes a `a` con `rel="noopener noreferrer"` para enlaces externos.
+
+
+<LinkCard
+	title="Descargar recursos - práctica final"
+	href="/ejemplos/practica-final.zip"
+	download="practica-final.zip"
+	target="_blank"
+	description="Descarga un ZIP con los recursos y archivos de ejemplo para la práctica final."
+/>
+
+
+Sugerencias y buenas prácticas
+
+- Rellena los campos de contacto con enlaces reales o ejemplos.
+- Usa listas para detallar habilidades y proyectos.
+- Mantén la semántica: usa `section`, `article`, `aside`, `header`, `footer` según corresponda.
+- Revisa la accesibilidad: añade `alt` a las imágenes y atributos `title` cuando convenga.
+
+Estructura recomendada en el árbol de prácticas:
+
+<FileTree>
+- practicas
+	- practica-final
+		- index.html (la copia completada por ti)
+		- styles
+      - style.css (la copia del style.css del ejemplo, sin modificaciones)
+      - vars.css (la copia del vars.css del ejemplo, aquí tienes que añadir tus variables de color personalizadas)
+      - normalize.css (la copia del normalize.css del ejemplo, sin modificaciones)
+    - index.js (la copia del index.js del ejemplo, sin modificaciones)
+</FileTree>
+
