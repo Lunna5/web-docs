@@ -1,0 +1,176 @@
+<!-- Agregamos el DOCTYPE para que el navegador salga del modo quirks y los estilos se apliquen correctamente -->
+<!DOCTYPE html>
+
+<!-- Agregamos el atributo lang="es" para que el navegador sepa que el contenido es en español -->
+<html lang="es">
+
+<head>
+    <!-- Agregamos el título de la página -->
+    <title>Mi curriculum | Lunna Martín</title>
+
+    <!-- Información para que el navegador muestre correctamente la página en dispositivos móviles -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Linkeamos la hoja de estilos con la página -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+</head>
+
+<body class="base">
+    <div class="container">
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar">
+            <img src="assets/perfil.jpg" alt="Foto de perfil de Lunna" class="perfil" />
+
+            <div class="contact-container">
+                <h3 class="contact-text">Contacto</h3>
+                <ul>
+                    <li>
+                        <a href="tel:+34123456789">
+                            <span class="nf nf-fa-phone icon"></span>
+                            <span>+34 123 456 789</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:git@lunna.dev">
+                            <span class="nf nf-md-email icon"></span>
+                            <span>git@lunna.dev</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/lunna5" target="_blank">
+                            <span class="nf nf-fa-github icon"></span>
+                            <span>github.com/lunna5</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main">
+            <!-- Botón de menú para dispositivos móviles (invisible en pantallas grandes) -->
+            <span class="nf nf-cod-menu menu"></span>
+
+            <!-- Cabecera titulo y subtítulo -->
+            <header class="header">
+                <h1 class="colored"><i>Lunna Martín González</i></h1>
+                <h3>Alumna del I.E.S Torre Atalaya</h3>
+            </header>
+
+            <!-- SECCIÓN 1: PÁRRAFOS -->
+            <section>
+                <h3>Acerca de mi</h3>
+                <p>Soy una estudiante de <b>2º de Bachillerato tecnológico</b>. Me gusta aprender cosas nuevas y tambien
+                    enseñar.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam rem unde, impedit odit ratione alias
+                    itaque quam eos deleniti magni praesentium soluta ducimus culpa quasi quod exercitationem sint amet
+                    voluptate? Lorem ipsum dolor <i>sit amet consectetur adipisicing </i> elit. At laudantium
+                    perferendis possimus atque ratione? Temporibus veniam recusandae, quisquam dolorem tempora
+                    dignissimos delectus, incidunt itaque ullam cumque laudantium quos laborum! Molestiae?</p>
+            </section>
+
+            <!-- SECCIÓN 2: TABLA -->
+            <section class="table">
+                <h3>Formación Académica</h3>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Año</th>
+                            <th>Titulación</th>
+                            <th>Centro Educativo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024 - Presente</td>
+                            <td>Bachillerato Ciencias Tecnológicas</td>
+                            <td>I.E.S Torre Atalaya</td>
+                        </tr>
+                        <tr>
+                            <td>2020 - 2024</td>
+                            <td>Educación Secundaria Obligatoria (ESO)</td>
+                            <td>I.E.S Torre Atalaya</td>
+                        </tr>
+                        <tr>
+                            <td>2014 - 2020</td>
+                            <td>Educación Primaria</td>
+                            <td>C.E.I.P Tierno Galván</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- SECCIÓN 3: LISTA ORDENADA -->
+            <section>
+                <h3>Habilidades</h3>
+                <ol>
+                    <li>
+                        <strong>HTML:</strong>
+                        Conocimiento avanzado en la estructura y semántica de páginas web, incluyendo el uso de
+                        etiquetas para contenido multimedia y formularios.
+                    </li>
+                    <li>
+                        <strong>CSS: </strong>
+                        Experiencia en diseño y maquetación de páginas web, utilizando flexbox, grid y media queries
+                        para crear diseños responsivos.
+                    </li>
+                    <li>
+                        <strong>JavaScript: </strong>
+                        Capacidad para crear interacciones dinámicas en las páginas web, manipulando el DOM y
+                        gestionando eventos.
+                    </li>
+                    <li>
+                        <strong>Git: </strong>
+                        Familiaridad con el control de versiones utilizando Git, incluyendo la creación de ramas,
+                        resolución de conflictos y colaboración en proyectos.
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>Experiencia Laboral</h3>
+                <ul>
+                    <li>
+                        <strong>Desarrollador Web:</strong>
+                        He construido varios proyectos personales y para otras personas como freelancer usado HTML, CSS,
+                        JavaScript/TypeScript, React y otras tecnologías web modernas.
+                    </li>
+                    <li>
+                        <strong>Dessarrollo de aplicaciones nativas</strong>
+                        He desarrollado una serie de aplicaciones nativas para Linux usando tecnologías como Rust, GTK,
+                        QT, Java FX y otras.
+                    </li>
+                    <li>
+                        <strong>Desarollo de addons para Pterodactyl:</strong>
+                        He desarrollado una serie de addons para el panel de control de servidores Pterodactyl usando
+                        PHP con Laravel y TypeScript con React. Tambien en modificado wings para el panel de control de
+                        servidores Wings usando Go.
+                    </li>
+
+                    <li>
+                        <strong>Desarollo de aplicaciones y librerias homebrew:</strong>
+                        He desarrollado una serie de aplicaciones y librerias homebrew para consolas como la Wii o la
+                        DS, por ejemplo portee el motor de videojuegos Raylib a la Wii usando una capa de traducción
+                        entre OpenGL <-> GX.
+                    </li>
+                </ul>
+            </section>
+
+            <footer class="text-center">
+                <p>&copy; 2026 <i><u>Lunna</u></i>. Todos los derechos reservados.</p>
+            </footer>
+        </main>
+
+
+    </div>
+
+    <!-- Linkeamos el archivo JavaScript con la página para que funcione el botón de menú -->
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
