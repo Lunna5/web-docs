@@ -22,5 +22,11 @@
   },
   "peerDependencies": {
     "@expressive-code/core": "^0.41.7"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   }
 }
